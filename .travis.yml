@@ -1,0 +1,47 @@
+sudo: required
+dist: precise
+group: edge
+
+language: android
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - tools
+    - build-tools-25.0.3
+    - android-25
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/$GRADLE_VERSION
+    - $HOME/.gradle/caches/jars-1
+    - $HOME/.gradle/native
+    - $HOME/.gradle/wrapper
+
+before_cache:
+  - rm -rf $HOME/.gradle/daemon/
+  - rm -rf $HOME/.gradle/caches/modules-2/modules-2.lock
+
+jdk: oraclejdk8
+
+git:
+  depth: 10
+
+branches:
+  only:
+    - develop
+    - master
+    - /release-.*$/
+
+jobs:
+  include:
+    - stage: test
+      script: bash "ci/run_script.sh"
+      env: TEST_SUITE="rxfacebook:build" MODULE_DIR="rxfacebook"
+
+env:
+  global:
+  - export GRADLE_VERSION=$(sed -n "/[0-9]\.[0-9]/p" gradle/wrapper/gradle-wrapper.properties | cut -c 67-69)
+  - TERM=dumb
+  - STDOUT_FILTERS="ci/stdout_filters.sed"

@@ -22,15 +22,17 @@ allprojects {
 
 publishGlobalConfigurations {
     groupId = group
-    versionname = version
+    versionName = version
 
     githubUrl = "https://github.com/saantiaguilera/android-api-RxFacebook"
 
-    bintrayApiKey = System.getenv('BINTRAY_SANTI_KEY')
+    bintrayRepository = 'maven'
+
     bintrayUser = System.getenv('BINTRAY_SANTI_USER')
+    bintrayApiKey = System.getenv('BINTRAY_SANTI_KEY')
 
     licenseUrl = "http://www.opensource.org/licenses/BSD-3-Clause"
-    licenseName = "The 3-Clause BSD License"
+    licenseName = "BSD"
 }
 
 task clean(type:Delete) {

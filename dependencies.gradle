@@ -1,0 +1,13 @@
+ext {
+    facebookSdkVersion = '4.5.0' // Using explicit 4.5.0 since its the last one with min api level 14
+    facebook = [
+        sdk : "com.facebook.android:facebook-android-sdk:$facebookSdkVersion"
+    ]
+
+    rxJavaVersion = '1.1.6'
+    rxAndroidVersion = '1.2.1'
+    rx = [
+        android : "io.reactivex:rxandroid:$rxAndroidVersion",
+        java : "io.reactivex:rxjava:$rxJavaVersion"
+    ]
+}

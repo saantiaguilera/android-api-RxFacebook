@@ -1,1 +1,1 @@
-include ':testapp', ':rxfacebook'
+include ':rxfacebook'

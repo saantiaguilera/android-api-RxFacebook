@@ -1,5 +1,7 @@
 # RxFacebook
 
+[![Build Status](https://travis-ci.org/saantiaguilera/android-api-RxFacebook.svg?branch=develop)](https://travis-ci.org/saantiaguilera/android-api-RxFacebook) [![Download](https://api.bintray.com/packages/saantiaguilera/maven/com.saantiaguilera.rx.rxfacebook/images/download.svg) ](https://bintray.com/saantiaguilera/maven/com.saantiaguilera.rx.rxfacebook/_latestVersion)
+
 A reactive extension over the facebook SDK.
 
 ### Requirements

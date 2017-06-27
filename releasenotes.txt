@@ -1,5 +1,0 @@
-### CHANGELOG
-
-v1.0.0
-
-- Initial release, as per facebook sdk 4.5.0

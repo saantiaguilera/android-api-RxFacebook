@@ -37,7 +37,7 @@ public final class RxFacebook {
 
     private @Nullable Bundle params;
 
-    private @Nullable String tag;
+    private @Nullable Object tag;
     private @Nullable String version;
     private @Nullable HttpMethod httpMethod;
     private boolean skipClientToken;
@@ -63,7 +63,7 @@ public final class RxFacebook {
      * @param tag for the request
      * @return builder instance
      */
-    public @NonNull RxFacebook tag(@NonNull String tag) {
+    public @NonNull RxFacebook tag(@NonNull Object tag) {
         this.tag = tag;
         return this;
     }

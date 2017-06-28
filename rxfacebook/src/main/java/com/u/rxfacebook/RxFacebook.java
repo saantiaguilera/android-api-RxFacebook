@@ -24,6 +24,8 @@ import java.util.Collection;
 import org.json.JSONObject;
 import rx.Observable;
 import rx.functions.Action0;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 import rx.subjects.PublishSubject;
 import rx.subjects.Subject;
 
@@ -393,8 +395,7 @@ public final class RxFacebook {
 
         PublishSubject<LoginResult> subject = PublishSubject.create();
         loginImpl = new LoginImpl(subject);
-        subject.doOnSubscribe(action);
-        return subject;
+        return subject.doOnSubscribe(action);
     }
 
     /**
@@ -421,7 +422,7 @@ public final class RxFacebook {
     public @NonNull Observable<GraphResponse> request(final @NonNull GraphRequest request) {
         final PublishSubject<GraphResponse> responseSubject = PublishSubject.create();
 
-        if (httpMethod != null && request.getHttpMethod() == null) {
+        if (httpMethod != null && request.getHttpMethod() == HttpMethod.GET) { // It wont be null, default is GET
             request.setHttpMethod(httpMethod);
         }
 
@@ -446,8 +447,17 @@ public final class RxFacebook {
         request.setCallback(new GraphRequest.Callback() {
             @Override
             public void onCompleted(final GraphResponse response) {
-                responseSubject.onNext(response);
-                responseSubject.onCompleted();
+                // This is done only to get out of the subscribing msg
+                Observable.just(response)
+                    .observeOn(Schedulers.computation())
+                    .subscribeOn(Schedulers.immediate())
+                    .subscribe(new Action1<GraphResponse>() {
+                        @Override
+                        public void call(final GraphResponse graphResponse) {
+                            responseSubject.onNext(graphResponse);
+                            responseSubject.onCompleted();
+                        }
+                    });
             }
         });
 

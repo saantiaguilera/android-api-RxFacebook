@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical"
+
+    android:gravity="center"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/activity_main_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"
+        android:text="Call Login!"/>
+
+    <TextView
+        android:id="@+id/activity_main_request_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"
+        android:text="Request me"/>
+
+    <TextView
+        android:id="@+id/activity_main_request_friends"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"
+        android:text="Request my friends"/>
+
+    <TextView
+        android:id="@+id/activity_main_request_something"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"
+        android:text="Request something"/>
+
+</LinearLayout>

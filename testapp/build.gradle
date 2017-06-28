@@ -1,0 +1,31 @@
+apply plugin:'com.android.application'
+
+android {
+    compileSdkVersion androidTargetSdkVersion.toInteger()
+    buildToolsVersion androidBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion androidMinimumSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+        applicationId "com.u.testapp"
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:25.3.1'
+
+    compile rx.java
+    compile rx.android
+
+    compile project(path:':rxfacebook')
+}

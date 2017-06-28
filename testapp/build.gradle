@@ -22,7 +22,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile support.appcompat
 
     compile rx.java
     compile rx.android

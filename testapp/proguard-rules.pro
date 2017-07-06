@@ -23,7 +23,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-
 -dontnote android.net.http.**
 -dontnote org.apache.http.**
 
@@ -43,5 +42,6 @@
 }
 
 -dontnote rx.internal.util.PlatformDependent
-
+-dontnote kotlin.internal.JRE8PlatformImplementations
+-dontnote kotlin.reflect.jvm.internal.ReflectionFactoryImpl
 -dontnote com.facebook.**

@@ -1,12 +1,17 @@
 ext {
     supportVersion = '25.4.0'
     support = [
-        appcompat : "com.android.support:appcompat-v7:$supportVersion"
+        appcompat : "com.android.support:appcompat-v7:$supportVersion",
+        v4 : "com.android.support:support-v4:$supportVersion"
     ]
 
     facebookSdkVersion = '4.5.0' // Using explicit 4.5.0 since its the last one with min api level 14
     facebook = [
         sdk : "com.facebook.android:facebook-android-sdk:$facebookSdkVersion"
+    ]
+
+    kotl = [
+        jre7 : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
     ]
 
     rxJavaVersion = '1.1.6'

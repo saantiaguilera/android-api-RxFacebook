@@ -1,4 +1,5 @@
 apply plugin:'com.android.library'
+apply plugin:'kotlin-android'
 
 android {
     compileSdkVersion androidTargetSdkVersion.toInteger()
@@ -13,7 +14,11 @@ android {
 
 dependencies {
     compile facebook.sdk
+    compile kotl.jre7
 
     provided rx.java
     provided rx.android
+}
+repositories {
+    mavenCentral()
 }

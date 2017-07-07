@@ -16,6 +16,6 @@ dependencies {
     compile facebook.sdk
     compile kotl.jre7
 
-    provided rx.java
-    provided rx.android
+    provided rx.java2
+    provided rx.android2
 }

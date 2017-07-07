@@ -1,1 +1,1 @@
-include ':rxfacebook', ':testapp'
+include ':rxfacebook', ':rx2facebook', ':testapp'

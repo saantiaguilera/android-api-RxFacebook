@@ -10,7 +10,7 @@ RxFacebook can be included in any Android application.
 
 RxFacebook supports Android ApiLevel 14 and later.
 
-RxJava and RxAndroid. They arent added as dependencies, but expects you to add them. It supports both 1.X and 2.X
+RxJava and RxAndroid arent added as dependencies, but expects you to have them. It supports both 1.X and 2.X
 
 ### Description
 

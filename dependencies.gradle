@@ -16,8 +16,12 @@ ext {
 
     rxJavaVersion = '1.1.6'
     rxAndroidVersion = '1.2.1'
+    rxAndroid2Version = '2.0.1'
+    rxJava2Version = '2.1.1'
     rx = [
         android : "io.reactivex:rxandroid:$rxAndroidVersion",
-        java : "io.reactivex:rxjava:$rxJavaVersion"
+        java : "io.reactivex:rxjava:$rxJavaVersion",
+        android2 : "io.reactivex.rxjava2:rxandroid:$rxAndroid2Version",
+        java2 : "io.reactivex.rxjava2:rxjava:$rxJava2Version"
     ]
 }

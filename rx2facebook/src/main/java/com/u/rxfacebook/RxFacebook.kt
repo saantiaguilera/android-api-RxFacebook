@@ -30,6 +30,8 @@ import org.json.JSONObject
  */
 class RxFacebook private constructor() {
 
+    private enum class Irrelevant { DATA }
+
     private var accessToken: AccessToken? = null
 
     private var params: Bundle? = null
@@ -330,11 +332,11 @@ class RxFacebook private constructor() {
      * Should be ran on the UI thread
      * Logs out of facebook.
      */
-    fun logout(): Observable<Void> {
+    fun logout(): Observable<Any> {
         loginImpl?.shutdown()
         loginImpl = null
 
-        return Observable.just<Void>(null)
+        return Observable.just<Any>(Irrelevant.DATA)
                 .doOnSubscribe { LoginManager.getInstance().logOut() }
     }
 
